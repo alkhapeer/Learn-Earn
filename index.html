@@ -1,30 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Learn&Earn</title>
-  <meta http-equiv="refresh" content="3; url=login.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شبكة تعلم واربح | Learn & Earn</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;display:grid;place-items:center;height:100vh;margin:0;background:#f7f7f8}
-    .card{background:#fff;padding:24px 28px;border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,.08);text-align:center}
-    a{color:#0b5fff;text-decoration:none}
+    body {
+      margin: 0;
+      font-family: "Cairo", Arial, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #fefefe);
+      color: #333;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    header {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #1565c0;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.8;
+    }
+
+    main h2 {
+      font-size: 1.4em;
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    main p {
+      font-size: 1.1em;
+      max-width: 500px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 4px;
+      background: #1565c0;
+      margin: 15px auto;
+      border-radius: 5px;
+    }
+
+    footer {
+      font-size: 0.9em;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+
+    .en {
+      font-family: "Poppins", sans-serif;
+      direction: ltr;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>شبكة تعلم واربح | Learn&Earn</h1>
-    <p>يتم تحويلك…</p>
-    <p><a href="login.html">اذهب يدويًا إلى صفحة تسجيل الدخول</a></p>
-  </div>
 
-  <script>
-    // إذا كان الموزّع مسجّل سابقًا، ادخل مباشرة للواجهة الرئيسية
-    try {
-      const id = localStorage.getItem('dist_id'); // احفظ هذا المفتاح في login.html عند نجاح الدخول
-      const next = id ? 'home.html' : 'login.html';
-      location.replace(next);
-    } catch(e) { /* المتصفح بلا localStorage: سيعمل الـ meta refresh */ }
-  </script>
+  <header>🌐 شبكة تعلم واربح | Learn & Earn</header>
+
+  <main>
+    <h2>🎉 أهلاً وسهلاً بك في شبكة الموزعين!</h2>
+    <div class="divider"></div>
+    <p>
+      نتمنى لك تجربة عمل ناجحة ومربحة، وننصحك بالاطلاع على الإرشادات وخطة العمل من الصفحة الرئيسية.<br>
+      بانضمامك كموزع، فإنك توافق ضمنيًا على الشروط والأحكام.
+    </p>
+
+    <br>
+
+    <div class="en">
+      <h2>🎉 Welcome to the Distributors Network!</h2>
+      <p>
+        We wish you great success and profitable growth.<br>
+        Please check the guidelines and business plan on the main page.<br>
+        By joining as a distributor, you implicitly agree to the terms and conditions.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 | شبكة تعلم واربح | Learn & Earn | جميع الحقوق محفوظة
+  </footer>
+
 </body>
 </html>
