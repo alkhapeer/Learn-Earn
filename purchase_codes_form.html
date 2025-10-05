@@ -1,0 +1,11 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8">
+<title>طلب كود شراء</title><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;padding:0;margin:0} iframe{border:0;width:100%;height:100vh}</style>
+<iframe id="form"></iframe>
+<script>
+  const DID = localStorage.getItem('DID')||'';
+  if(!DID){ alert('سجل الدخول أولًا'); location.href='login.html'; }
+  // ضع رابط Google Form لطلبات الأكواد (prefill) وعدّل entry.DID_FIELD_ID
+  const PCODES_FORM_URL = 'https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url&entry.DID_FIELD_ID=';
+  document.getElementById('form').src = PCODES_FORM_URL + encodeURIComponent(DID);
+</script>

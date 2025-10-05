@@ -1,0 +1,19 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8">
+<title>عمولاتي</title><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;padding:10px} iframe{border:0;width:100%;height:85vh}</style>
+<h3>📊 عمولاتي / My Commissions</h3>
+<iframe id="view"></iframe>
+<script>
+  const SHEET_ID = 'PUT_YOUR_SHEET_ID_HERE';
+  const SHEET_NAME = 'Commissions'; 
+  // Columns: A:id, B:sale_id, C:distributor_id, D:level, E:percent, F:commission_amount, G:sale_amount, H:sale_date, I:product_id, J:payout_month (yyyy-mm)
+  const did = localStorage.getItem('DID')||'';
+  if(!did){ alert('سجل الدخول أولًا'); location.href='login.html'; }
+
+  const d = new Date(); d.setMonth(d.getMonth()-1);
+  const ym = d.toISOString().slice(0,7); // yyyy-mm الشهر السابق
+  // أعمدة للعرض: sale_id, level, percent, commission_amount, sale_amount, sale_date, product_id
+  const tq = `select B,D,E,F,G,H,I where C='${did.replaceAll("'", "\\'")}' and J='${ym}' order by H desc`;
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:html&sheet=${encodeURIComponent(SHEET_NAME)}&tq=${encodeURIComponent(tq)}`;
+  document.getElementById('view').src = url;
+</script>

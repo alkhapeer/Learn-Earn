@@ -1,0 +1,37 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8">
+<title>شبكة تعلم واربح | تسجيل الدخول</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:sans-serif;padding:24px;background:#f7f7f7}
+.card{max-width:460px;margin:40px auto;background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:24px}
+h1{margin:0 0 10px} label{display:block;margin:12px 0 6px}
+input,button,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px}
+button{background:#0b7dda;color:#fff;border:none;font-weight:700;margin-top:14px}
+.small{color:#777;font-size:.9em;margin-top:10px}
+</style>
+<div class="card">
+  <h1>شبكة تعلم واربح | Learn&Earn</h1>
+  <p>أدخل رقم الموزع (Distributor ID)</p>
+  <label>Distributor ID</label>
+  <input id="did" placeholder="مثال: Rawa00001rawa" autocomplete="off">
+  <label>اللغة / Language</label>
+  <select id="lang">
+    <option value="ar" selected>العربية</option>
+    <option value="en">English</option>
+  </select>
+  <button id="loginBtn">تسجيل الدخول / Login</button>
+  <p class="small">سيُحفَظ المعرف محليًا لاستخدامه في بقية الصفحات.</p>
+</div>
+<script>
+  const DID = localStorage.getItem('DID')||'';
+  if(DID){ document.getElementById('did').value = DID; }
+  document.getElementById('loginBtn').onclick = ()=>{
+    const v = (document.getElementById('did').value||'').trim();
+    const lang = document.getElementById('lang').value || 'ar';
+    if(!v){ alert('أدخل Distributor ID'); return; }
+    localStorage.setItem('DID', v);
+    localStorage.setItem('LANG', lang);
+    // افتح صفحة الرئيسية (اضبطها في AppCreator24 لتشير إلى home.html)
+    location.href = 'home.html';
+  };
+</script>

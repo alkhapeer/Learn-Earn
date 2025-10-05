@@ -1,0 +1,28 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8">
+<title>القائمة الرئيسية</title><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:sans-serif;padding:24px;background:#f2f7fb}
+.grid{max-width:700px;margin:0 auto;display:grid;gap:14px}
+.btn{display:block;text-decoration:none;background:#fff;border-radius:14px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);padding:16px 18px;font-weight:700;color:#0b2b46}
+.note{max-width:700px;margin:12px auto;color:#555}
+.top{max-width:700px;margin:0 auto 16px auto;display:flex;justify-content:space-between;align-items:center}
+small{color:#666}
+</style>
+<div class="top">
+  <div><b>Learn&Earn</b><br><small id="who"></small></div>
+  <button onclick="logout()" style="padding:10px 12px;border-radius:10px;border:1px solid #ddd;background:#fff">خروج / Logout</button>
+</div>
+<div class="grid">
+  <a class="btn" href="orders_form.html">🛍️ شراء منتج / Buy Product</a>
+  <a class="btn" href="purchase_codes_form.html">💳 طلب كود شراء / Purchase Code Request</a>
+  <a class="btn" href="balance.html">💰 رصيدي / My Balance</a>
+  <a class="btn" href="commissions.html">📊 عمولاتي / My Commissions</a>
+  <a class="btn" href="support_form.html">📬 مراسلة الإدارة / Contact Support</a>
+</div>
+<p class="note">تم بناء النظام على Google Sheets/Forms بنفس أعمدة برنامج البايثون ونِسَب العمولات (7 مستويات = 35%: 6%,5%,5%,5%,5%,5%,4%). تُصرف العمولات يوم 15 للشهر التالي.</p>
+<script>
+  const did = localStorage.getItem('DID')||'';
+  document.getElementById('who').textContent = did ? ('ID: '+did) : 'لم تسجل الدخول';
+  function logout(){ localStorage.removeItem('DID'); location.href='login.html'; }
+</script>
